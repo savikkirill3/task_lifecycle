@@ -1,0 +1,16 @@
+<app-hero [(userName)]="name"></app-hero>
+
+<div *ngIf="name">
+
+  <ul class="skills">
+    <li *ngFor="let skill of skills; let i = index">
+      {{name}} your {{skill.skill}} skills at this {{skill.level}} level
+      <app-child-comp (onChanged)="onChanged($event, i)"></app-child-comp>
+    </li>
+  </ul>
+
+  Total : {{sum}}
+
+</div>
+
+
